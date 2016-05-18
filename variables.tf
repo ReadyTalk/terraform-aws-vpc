@@ -35,3 +35,6 @@ variable "bastion_ami" {
 variable "bastion_instance_type" {
   default = "t2.micro"
 }
+
+variable "propagating_vgws" {
+}

@@ -26,6 +26,8 @@ resource "aws_route_table" "private" {
     nat_gateway_id = "${element(aws_nat_gateway.default.*.id, count.index)}"
   }
 
+  propagating_vgws = ["${var.propagating_vgws}"]
+
   tags {
     Name = "PrivateRouteTable"
   }
@@ -38,6 +40,8 @@ resource "aws_route_table" "public" {
     cidr_block = "0.0.0.0/0"
     gateway_id = "${aws_internet_gateway.default.id}"
   }
+
+  propagating_vgws = ["${var.propagating_vgws}"]
 
   tags {
     Name = "PublicRouteTable"
