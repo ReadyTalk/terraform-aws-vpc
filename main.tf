@@ -129,6 +129,8 @@ resource "aws_security_group" "bastion" {
 
   tags {
     Name = "sgBastion"
+    Environment = "${var.bastionEnvtag}"
+    Product = "${var.bastionProducttag}"
   }
 }
 

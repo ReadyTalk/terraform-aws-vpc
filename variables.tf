@@ -38,3 +38,9 @@ variable "bastion_instance_type" {
 
 variable "propagating_vgws" {
 }
+
+variable "bastionEnvtag" {
+}
+
+variable "bastionProducttag" {
+}
